@@ -49,10 +49,17 @@ const WebcamCapture: React.FC = () => {
                         ref={webcamRef}
                         screenshotFormat="image/jpeg"
                         videoConstraints={{ facingMode: isFrontCamera ? 'user' : 'environment' }}
-                        className="w-full h-screen object-cover"
+                        className="w-full h-screen  "
                     />
-                    {/*<button onClick={capture}>Capture photo</button>*/}
-                    <button onClick={switchCamera}>Switch Camera</button>
+                    {/* Overlay text */}
+                    <div className="absolute top-0 right-0 flex items-center justify-center">
+                        <button onClick={switchCamera} className=" bottom-4 left-4 bg-gray-500 text-white px-4 py-2 rounded-full">Switch Camera</button>
+                    </div>
+
+                    {/* Your other UI elements go here */}
+
+                    {/* ... other UI elements ... */}
+
                     {imageSrc && (
                         <div>
                             <h2>Captured Photo:</h2>
